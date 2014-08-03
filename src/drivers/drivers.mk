@@ -48,7 +48,7 @@ NEED_RFKILL=y
 ifdef CONFIG_LIBNL32
   DRV_LIBS += -lnl-3
   DRV_LIBS += -lnl-genl-3
-  DRV_CFLAGS += -DCONFIG_LIBNL20
+  DRV_CFLAGS += -DCONFIG_LIBNL20 `pkg-config --cflags libnl-3.0`
 else
   ifdef CONFIG_LIBNL_TINY
     DRV_LIBS += -lnl-tiny
