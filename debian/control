@@ -1,7 +1,7 @@
 Source: wpa
 Section: net
 Priority: optional
-Maintainer: Debian/Ubuntu wpasupplicant Maintainers <pkg-wpa-devel@lists.alioth.debian.org>
+Maintainer: VyOS Package Maintainers <maintainers@vyos.net>
 Uploaders: Kel Modderman <kel@otaku42.de>,
  Stefan Lippers-Hollmann <s.l-h@gmx.de>,
  Jan Dittberner <jandd@debian.org>
