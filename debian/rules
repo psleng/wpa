@@ -84,7 +84,8 @@ override_dh_installchangelogs:
 
 override_dh_gencontrol:
 	if [ -f "../.VYOS_DEV_BUILD" ]; \
-		then dh_gencontrol -- -v999.dev; \
+		then dh_gencontrol -phostapd -- '-v1:999.dev'; \
+		dh_gencontrol --remaining-packages -- -v999.dev; \
 	else \
 		dh_gencontrol -phostapd -- '-v1:$(VERSION)'; \
 		dh_gencontrol --remaining-packages; \
