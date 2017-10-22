@@ -1073,3 +1073,50 @@ int wpa_insert_pmkid(u8 *ies, size_t ies_len, const u8 *pmkid)
 	return added;
 }
 #endif /* CONFIG_IEEE80211R */
+
+int wpa_cipher_key_len(int cipher)
+{
+	switch (cipher) {
+	case WPA_CIPHER_CCMP_256:
+	case WPA_CIPHER_GCMP_256:
+	case WPA_CIPHER_BIP_GMAC_256:
+	case WPA_CIPHER_BIP_CMAC_256:
+		return 32;
+	case WPA_CIPHER_CCMP:
+	case WPA_CIPHER_GCMP:
+	case WPA_CIPHER_AES_128_CMAC:
+	case WPA_CIPHER_BIP_GMAC_128:
+		return 16;
+	case WPA_CIPHER_TKIP:
+		return 32;
+	}
+
+	return 0;
+}
+
+
+enum wpa_alg wpa_cipher_to_alg(int cipher)
+{
+	switch (cipher) {
+	case WPA_CIPHER_CCMP_256:
+		return WPA_ALG_CCMP_256;
+	case WPA_CIPHER_GCMP_256:
+		return WPA_ALG_GCMP_256;
+	case WPA_CIPHER_CCMP:
+		return WPA_ALG_CCMP;
+	case WPA_CIPHER_GCMP:
+		return WPA_ALG_GCMP;
+	case WPA_CIPHER_TKIP:
+		return WPA_ALG_TKIP;
+	case WPA_CIPHER_AES_128_CMAC:
+		return WPA_ALG_IGTK;
+	case WPA_CIPHER_BIP_GMAC_128:
+		return WPA_ALG_BIP_GMAC_128;
+	case WPA_CIPHER_BIP_GMAC_256:
+		return WPA_ALG_BIP_GMAC_256;
+	case WPA_CIPHER_BIP_CMAC_256:
+		return WPA_ALG_BIP_CMAC_256;
+	}
+	return WPA_ALG_NONE;
+}
+
