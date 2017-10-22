@@ -107,6 +107,7 @@
 
 #ifdef CONFIG_IEEE80211W
 #define WPA_IGTK_LEN 16
+#define WPA_IGTK_MAX_LEN 32
 #endif /* CONFIG_IEEE80211W */
 
 
