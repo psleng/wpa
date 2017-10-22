@@ -753,7 +753,7 @@ static int wpa_supplicant_pairwise_gtk(struct wpa_sm *sm,
 	if (wpa_supplicant_check_group_cipher(sm, sm->group_cipher,
 					      gtk_len, gtk_len,
 					      &gd.key_rsc_len, &gd.alg) ||
-	    wpa_supplicant_install_gtk(sm, &gd, key->key_rsc, 0))) {
+	    wpa_supplicant_install_gtk(sm, &gd, key->key_rsc, 0)) {
 		wpa_dbg(sm->ctx->msg_ctx, MSG_DEBUG,
 			"RSN: Failed to install GTK");
 		return -1;
