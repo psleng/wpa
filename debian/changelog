@@ -1,3 +1,26 @@
+wpa (1.1+vyos1+helium3) unstable; urgency=low
+
+  [ UnicronNL ]
+  * 0001-hostapd-Avoid-key-reinstallation-in-FT-handshake
+  * 0002-Prevent-reinstallation-of-an-already-in-use-group-ke
+  * 0003-Extend-protection-of-GTK-IGTK-reinstallation-of-WNM-
+  * 0004-Fix-PTK-rekeying-to-generate-a-new-ANonce
+  * 0005-TDLS-Reject-TPK-TK-reconfiguration
+  * 0009-FT-Do-not-allow-multiple-Reassociation-Response-fram
+  * 0010-TDLS-Ignore-incoming-TDLS-Setup-Response-retries
+
+  [ Kim ]
+  * add #define WPA_IGTK_MAX_LEN 32
+  * fix typo
+  * correct statement
+
+  [ UnicronNL ]
+  * fix undefined reference
+  * add undefined reference to wpa_common.c
+  * remove unknow cipers
+
+ -- UnicronNL <dmbaturin@wheezydevel>  Fri, 10 Nov 2017 05:26:00 +0100
+
 wpa (1.1+vyos1+helium2) unstable; urgency=low
 
   [ Kim Hagen ]
